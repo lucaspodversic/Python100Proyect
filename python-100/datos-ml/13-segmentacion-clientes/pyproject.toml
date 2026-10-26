@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "segmentacion-clientes"
+version = "1.0.0"
+description = "Segmentación RFM + K-Means de clientes para campañas de marketing."
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "pandas>=2.0", "scikit-learn>=1.3"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+segmentacion = "segmentacion.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

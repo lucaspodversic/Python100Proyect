@@ -1,0 +1,17 @@
+# Proyecto 34-asistente-email: Asistente de email: resume, prioriza y redacta borradores de respuesta
+[project]
+name = "asistente-email"
+version = "1.0.0"
+description = "Asistente de email: resume, prioriza y redacta borradores de respuesta"
+requires-python = ">=3.10"
+# httpx se usa para hablar con las APIs de LLM (OpenAI / Anthropic)
+dependencies = ["httpx>=0.27"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-p no:cacheprovider -q"
+filterwarnings = ["ignore:Using `httpx`"]

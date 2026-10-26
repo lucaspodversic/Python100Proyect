@@ -1,0 +1,20 @@
+[
+  {"id": "py1", "rol": "backend", "nivel": "junior", "competencia": "python",
+   "texto": "¿Qué diferencia hay entre una lista y una tupla en Python?",
+   "claves": ["mutable", "inmutable", "hash", "rendimiento"]},
+  {"id": "py2", "rol": "backend", "nivel": "senior", "competencia": "python",
+   "texto": "Explicá qué es el GIL y cómo afecta a la concurrencia.",
+   "claves": ["global interpreter lock", "hilos", "multiprocessing", "i/o", "asyncio"]},
+  {"id": "db1", "rol": "backend", "nivel": "junior", "competencia": "bases de datos",
+   "texto": "¿Qué es un índice en una base de datos y cuándo conviene usarlo?",
+   "claves": ["búsqueda", "lectura", "escritura", "b-tree"]},
+  {"id": "db2", "rol": "backend", "nivel": "senior", "competencia": "bases de datos",
+   "texto": "¿Cómo evitarías una condición de carrera al descontar stock?",
+   "claves": ["transacción", "bloqueo", "atómica", "aislamiento"]},
+  {"id": "soft1", "rol": "*", "nivel": "*", "competencia": "comunicación",
+   "texto": "Contame de un conflicto con un compañero y cómo lo resolviste.",
+   "claves": ["escuchar", "acuerdo", "resultado", "aprendí"]},
+  {"id": "fe1", "rol": "frontend", "nivel": "junior", "competencia": "javascript",
+   "texto": "¿Qué diferencia hay entre let, const y var?",
+   "claves": ["ámbito", "bloque", "reasignar", "hoisting"]}
+]

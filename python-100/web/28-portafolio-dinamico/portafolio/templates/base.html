@@ -1,0 +1,7 @@
+<!doctype html>
+<!-- Plantilla base del portafolio -->
+<html lang="es"><head><meta charset="utf-8"><title>Portafolio</title></head><body>
+<nav><a href="{{ url_for('inicio') }}">Proyectos</a> · <a href="{{ url_for('contacto') }}">Contacto</a></nav>
+{% for m in get_flashed_messages() %}<p class="flash">{{ m }}</p>{% endfor %}
+{% block contenido %}{% endblock %}
+</body></html>

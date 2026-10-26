@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel><title>Diario Ejemplo</title>
+<item><title>Avances en energía solar</title><link>https://diario.test/solar</link>
+<pubDate>Mon, 26 Oct 2026 09:00:00 GMT</pubDate><description>&lt;p&gt;Nuevos &lt;b&gt;paneles&lt;/b&gt; más eficientes&lt;/p&gt;</description></item>
+<item><title>Resultado del partido</title><link>https://diario.test/futbol</link>
+<pubDate>Sun, 25 Oct 2026 22:00:00 GMT</pubDate><description>Deportes</description></item>
+<item><title>Noticia vieja de Python</title><link>https://diario.test/python</link>
+<pubDate>Tue, 20 Oct 2026 08:00:00 +0000</pubDate></item>
+</channel></rss>

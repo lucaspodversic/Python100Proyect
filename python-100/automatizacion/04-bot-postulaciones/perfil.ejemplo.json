@@ -1,0 +1,12 @@
+{
+  "nombre": "Candidato Demo",
+  "email": "candidato@ejemplo.invalid",
+  "carta": "Hola, me interesa la posición. Adjunto mi experiencia en Python.",
+  "obligatorias": ["python"],
+  "deseables": ["docker", "fastapi", "django", "pytest"],
+  "excluidas": ["guardias", "trainee"],
+  "ubicaciones": ["Buenos Aires"],
+  "acepta_remoto": true,
+  "salario_minimo": 2500,
+  "puntaje_minimo": 1
+}

@@ -1,0 +1,16 @@
+# Proyecto 24: Chat en tiempo real con WebSockets (FastAPI).
+[project]
+name = "chat-tiempo-real"
+version = "1.0.0"
+description = "Chat multi-sala con WebSockets en FastAPI"
+requires-python = ">=3.10"
+dependencies = ["fastapi>=0.110", "uvicorn[standard]>=0.27"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "httpx>=0.27"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-p no:cacheprovider -q"
+filterwarnings = ["ignore:Using `httpx`"]

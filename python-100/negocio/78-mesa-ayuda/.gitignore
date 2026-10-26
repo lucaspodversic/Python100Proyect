@@ -1,0 +1,14 @@
+# Entornos virtuales y cachés de Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+# Bases de datos y archivos generados en tiempo de ejecución
+*.db
+*.sqlite3
+*.log
+salida/

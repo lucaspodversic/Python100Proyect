@@ -1,0 +1,57 @@
+<!doctype html>
+<!-- Frontend mínimo del inventario: HTML + JS nativo, sin frameworks ni CDNs. -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Inventario</title>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 2rem; }
+  table { border-collapse: collapse; } td, th { border: 1px solid #ccc; padding: .3rem .6rem; }
+  .bajo { background: #fde2e2; }
+</style>
+</head>
+<body>
+<h1>Inventario de la tienda</h1>
+<!-- Login: guarda el token en memoria (no en localStorage, para reducir exposición a XSS). -->
+<form id="login">
+  <input id="email" placeholder="email"> <input id="pass" type="password" placeholder="contraseña">
+  <button>Entrar</button>
+</form>
+<p><input id="q" placeholder="Buscar por nombre o SKU"> <button id="buscar">Buscar</button></p>
+<table><thead><tr><th>SKU</th><th>Nombre</th><th>Precio</th><th>Stock</th><th>Mínimo</th></tr></thead>
+<tbody id="filas"></tbody></table>
+<script>
+let token = null;
+// Helper: llamada a la API con el token Bearer.
+async function api(ruta, opciones = {}) {
+  opciones.headers = Object.assign({"Content-Type": "application/json"}, opciones.headers || {});
+  if (token) opciones.headers["Authorization"] = "Bearer " + token;
+  const r = await fetch(ruta, opciones);
+  if (!r.ok) throw new Error((await r.json()).detail || r.status);
+  return r.json();
+}
+// Pinta la tabla usando textContent (nunca innerHTML con datos: evita XSS).
+async function cargar() {
+  const q = encodeURIComponent(document.getElementById("q").value);
+  const productos = await api("/productos?q=" + q);
+  const tbody = document.getElementById("filas");
+  tbody.replaceChildren();
+  for (const p of productos) {
+    const tr = document.createElement("tr");
+    if (p.stock <= p.stock_minimo) tr.className = "bajo";
+    for (const v of [p.sku, p.nombre, (p.precio_centavos / 100).toFixed(2), p.stock, p.stock_minimo]) {
+      const td = document.createElement("td"); td.textContent = v; tr.appendChild(td);
+    }
+    tbody.appendChild(tr);
+  }
+}
+document.getElementById("login").onsubmit = async (e) => {
+  e.preventDefault();
+  const r = await api("/auth/login", {method: "POST", body: JSON.stringify({
+    email: document.getElementById("email").value, password: document.getElementById("pass").value})});
+  token = r.token; cargar();
+};
+document.getElementById("buscar").onclick = cargar;
+</script>
+</body>
+</html>

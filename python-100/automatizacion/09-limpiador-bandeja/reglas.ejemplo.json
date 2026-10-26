@@ -1,0 +1,14 @@
+[
+  {"nombre": "Promociones viejas a la papelera",
+   "si": {"asunto_regex": "oferta|descuento|% off|newsletter", "mas_antiguo_que_dias": 30},
+   "entonces": {"papelera": true}},
+  {"nombre": "Facturas",
+   "si": {"asunto_regex": "factura|invoice", "tiene_adjuntos": true},
+   "entonces": {"etiquetar": ["Finanzas/Facturas"], "archivar": true, "marcar_leido": true}},
+  {"nombre": "Notificaciones de GitHub",
+   "si": {"dominio": "github.com"},
+   "entonces": {"etiquetar": ["Dev/GitHub"], "archivar": true}},
+  {"nombre": "Adjuntos pesados",
+   "si": {"tamano_mayor_kb": 10240, "mas_antiguo_que_dias": 365},
+   "entonces": {"etiquetar": ["Revisar/Pesados"]}}
+]

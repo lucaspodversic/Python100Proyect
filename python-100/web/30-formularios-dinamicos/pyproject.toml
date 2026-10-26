@@ -1,0 +1,16 @@
+# Proyecto 30: Generador de formularios dinámicos (tipo Google Forms).
+[project]
+name = "formularios-dinamicos"
+version = "1.0.0"
+description = "Crear formularios con esquema JSON, recopilar respuestas validadas y exportarlas"
+requires-python = ">=3.10"
+dependencies = ["fastapi>=0.110", "uvicorn>=0.27", "python-multipart>=0.0.9"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "httpx>=0.27"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-p no:cacheprovider -q"
+filterwarnings = ["ignore:Using `httpx`"]

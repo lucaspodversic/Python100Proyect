@@ -1,0 +1,11 @@
+{# Formulario compartido de registro y login #}
+{% extends "base.html" %}
+{% block contenido %}
+<h1>{{ titulo }}</h1>
+<form method="post">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <label>Usuario <input name="nombre" required></label>
+  <label>Contraseña <input name="clave" type="password" required></label>
+  <button>Enviar</button>
+</form>
+{% endblock %}

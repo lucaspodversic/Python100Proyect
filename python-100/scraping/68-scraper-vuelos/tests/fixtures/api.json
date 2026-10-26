@@ -1,0 +1,6 @@
+{"data": [
+ {"id": "1", "price": {"total": "199.90", "currency": "EUR"}, "airline": "IB",
+  "segments": [{"number": "IB6845", "dep": {"iata": "mad", "at": "2026-12-01T10:00:00"},
+                "arr": {"iata": "eze", "at": "2026-12-01T22:30:00"}}], "stops": 0},
+ {"id": "2", "price": {"currency": "EUR"}, "airline": "XX", "segments": []}
+]}

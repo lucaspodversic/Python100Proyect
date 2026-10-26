@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Blog Tech</title>
+<entry><title>Python 3.14 publicado</title><link rel="self" href="https://blog.test/feed/1"/>
+<link href="https://blog.test/py314"/><updated>2026-10-26T11:30:00Z</updated><summary>Novedades del lenguaje</summary></entry>
+<entry><title>AVANCES EN ENERGÍA SOLAR</title><link href="https://blog.test/solar-copia"/>
+<updated>2026-10-26T08:00:00Z</updated></entry>
+</feed>

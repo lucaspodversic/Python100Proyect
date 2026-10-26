@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+
+# Entornos y herramientas
+.venv/
+venv/
+.env
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Artefactos generados por la CLI (modelos, reportes, salidas)
+*.joblib
+*.pt
+*.sqlite
+*.db
+salida/
+reportes/
+
+# Credenciales: nunca versionar
+credentials.json
+token.json
+*.pem
+
+# Editores / SO
+.vscode/
+.idea/
+.DS_Store

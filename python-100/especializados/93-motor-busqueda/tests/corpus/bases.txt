@@ -1,0 +1,4 @@
+Bases de datos relacionales
+
+Una base de datos relacional organiza la información en tablas. SQL es el lenguaje de consultas.
+PostgreSQL y SQLite son motores populares. Desde Python se accede con sqlite3 o SQLAlchemy.

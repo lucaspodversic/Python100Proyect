@@ -1,0 +1,9 @@
+{# Formulario de contacto con CSRF y honeypot anti-spam #}
+{% extends "base.html" %}{% block contenido %}
+<h1>Contacto</h1>
+<form method="post">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <input name="sitio_web" style="display:none" tabindex="-1" autocomplete="off">
+  <input name="nombre" placeholder="Nombre"><input name="email" placeholder="Email">
+  <textarea name="texto"></textarea><button>Enviar</button>
+</form>{% endblock %}

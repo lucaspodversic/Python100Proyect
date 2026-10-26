@@ -1,0 +1,16 @@
+# Proyecto 26: API de gestión de inventario de almacén.
+[project]
+name = "api-inventario"
+version = "1.0.0"
+description = "Control de stock multi-almacén con movimientos, kardex y costo promedio"
+requires-python = ">=3.10"
+dependencies = ["fastapi>=0.110", "uvicorn>=0.27"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "httpx>=0.27"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-p no:cacheprovider -q"
+filterwarnings = ["ignore:Using `httpx`"]

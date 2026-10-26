@@ -1,0 +1,3 @@
+{"tarjeta": "li.oferta", "origen_fijo": "COR", "destino_fijo": "LIM",
+ "campos": {"aerolinea": ".aero", "numero": ".num", "salida": "time.sal", "duracion": ".dur",
+            "escalas": ".esc", "precio": ".precio"}}

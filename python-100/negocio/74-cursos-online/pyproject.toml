@@ -1,0 +1,28 @@
+# Configuración del proyecto (PEP 621). Instalación: pip install -e ".[dev]"
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cursos-online"
+version = "1.0.0"
+description = "Plataforma de cursos online con roles profesor/alumno, lecciones, exámenes y progreso"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = ["fastapi>=0.110", "sqlalchemy>=2.0", "pydantic>=2.5", "uvicorn>=0.29"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "httpx>=0.27"]
+
+[tool.setuptools]
+packages = ["app"]
+
+[tool.pytest.ini_options]
+# pythonpath permite importar el paquete sin instalarlo.
+testpaths = ["tests"]
+pythonpath = ["."]
+# Sin caché de pytest para no ensuciar el repositorio.
+addopts = "-q -p no:cacheprovider"
+# Aviso de deprecación interno de Starlette sobre httpx (no afecta al código).
+filterwarnings = ["ignore:Using `httpx`"]

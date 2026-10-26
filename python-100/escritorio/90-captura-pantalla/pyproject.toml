@@ -1,0 +1,29 @@
+# Configuración del proyecto (PEP 621). Instalación: pip install -e ".[dev]"
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "captura-pantalla"
+version = "1.0.0"
+description = "Captura de pantalla con Tkinter: pantalla completa o región, guardado con nombre personalizado"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = ["pillow>=10"]
+
+[project.optional-dependencies]
+mss = ["mss>=9"]
+dev = ["pytest>=8"]
+
+[tool.setuptools]
+packages = ["captura"]
+
+[tool.pytest.ini_options]
+# pythonpath permite importar el paquete sin instalarlo.
+testpaths = ["tests"]
+pythonpath = ["."]
+# Sin caché de pytest para no ensuciar el repositorio.
+addopts = "-q -p no:cacheprovider"
+# Aviso de deprecación interno de Starlette sobre httpx (no afecta al código).
+filterwarnings = ["ignore:Using `httpx`"]

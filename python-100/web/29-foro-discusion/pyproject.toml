@@ -1,0 +1,16 @@
+# Proyecto 29: Foro de discusión tipo Reddit (hilos, respuestas anidadas y votos).
+[project]
+name = "foro-discusion"
+version = "1.0.0"
+description = "Foro con FastAPI: autenticación por token, hilos, respuestas anidadas y votos"
+requires-python = ">=3.10"
+dependencies = ["fastapi>=0.110", "uvicorn>=0.27"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "httpx>=0.27"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-p no:cacheprovider -q"
+filterwarnings = ["ignore:Using `httpx`"]

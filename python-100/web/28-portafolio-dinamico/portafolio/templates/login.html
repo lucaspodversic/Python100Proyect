@@ -1,0 +1,6 @@
+{# Login del administrador #}
+{% extends "base.html" %}{% block contenido %}
+<h1>Admin</h1>
+<form method="post"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+<input name="usuario"><input name="clave" type="password"><button>Entrar</button></form>
+{% endblock %}

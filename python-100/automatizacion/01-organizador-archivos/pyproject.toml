@@ -1,0 +1,26 @@
+# Configuración del proyecto según PEP 621.
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "organizador-archivos"
+version = "1.0.0"
+description = "Organizador de archivos inteligente: clasifica y renombra por tipo, fecha o metadatos."
+requires-python = ">=3.10"
+# Sin dependencias de runtime: sólo biblioteca estándar.
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+organizador = "organizador.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+# Permite importar el paquete desde src/ sin instalarlo.
+pythonpath = ["src"]
+testpaths = ["tests"]

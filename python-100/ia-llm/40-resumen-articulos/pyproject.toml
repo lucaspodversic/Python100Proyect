@@ -1,0 +1,17 @@
+# Proyecto 40-resumen-articulos: Resumidor de artículos web: extracción HTML + resumen map-reduce
+[project]
+name = "resumen-articulos"
+version = "1.0.0"
+description = "Resumidor de artículos web: extracción HTML + resumen map-reduce"
+requires-python = ">=3.10"
+# httpx se usa para hablar con las APIs de LLM (OpenAI / Anthropic)
+dependencies = ["httpx>=0.27"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-p no:cacheprovider -q"
+filterwarnings = ["ignore:Using `httpx`"]

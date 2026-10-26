@@ -1,0 +1,28 @@
+# Configuración del proyecto (PEP 621). Instalación: pip install -e ".[dev]"
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reloj-cronometro"
+version = "1.0.0"
+description = "Reloj, cronómetro con vueltas, temporizador y alarmas con Tkinter"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.setuptools]
+packages = ["reloj"]
+
+[tool.pytest.ini_options]
+# pythonpath permite importar el paquete sin instalarlo.
+testpaths = ["tests"]
+pythonpath = ["."]
+# Sin caché de pytest para no ensuciar el repositorio.
+addopts = "-q -p no:cacheprovider"
+# Aviso de deprecación interno de Starlette sobre httpx (no afecta al código).
+filterwarnings = ["ignore:Using `httpx`"]

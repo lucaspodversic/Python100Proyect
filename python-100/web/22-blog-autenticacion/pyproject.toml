@@ -1,0 +1,15 @@
+# Proyecto 22: Blog con registro, login y publicación de artículos (Flask).
+[project]
+name = "blog-autenticacion"
+version = "1.0.0"
+description = "Blog en Flask con autenticación segura, CSRF y SQLite"
+requires-python = ">=3.10"
+dependencies = ["flask>=3.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-p no:cacheprovider -q"

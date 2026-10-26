@@ -1,0 +1,33 @@
+# Configuración del proyecto (PEP 621). Se instala con: pip install -e ".[dev]"
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reservas-hotel"
+version = "1.0.0"
+description = "Backend de reservas de hotel con FastAPI + SQLAlchemy, sin solapamientos y con control de concurrencia"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "fastapi>=0.110",
+    "sqlalchemy>=2.0",
+    "pydantic>=2.5",
+    "uvicorn>=0.29",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "httpx>=0.27"]
+
+[tool.setuptools]
+packages = ["app"]
+
+[tool.pytest.ini_options]
+# pythonpath permite importar `app` sin instalar el paquete.
+testpaths = ["tests"]
+pythonpath = ["."]
+# Desactivamos la caché de pytest para no dejar .pytest_cache en el repo.
+addopts = "-q -p no:cacheprovider"
+# Aviso de deprecación interno de Starlette sobre httpx (no afecta a este código).
+filterwarnings = ["ignore:Using `httpx`"]

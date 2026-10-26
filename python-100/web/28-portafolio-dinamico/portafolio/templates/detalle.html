@@ -1,0 +1,6 @@
+{# Detalle de un proyecto #}
+{% extends "base.html" %}{% block contenido %}
+<h1>{{ p.titulo }}</h1><p>{{ p.resumen }}</p><div>{{ p.descripcion }}</div>
+{% if p.url_repo %}<a href="{{ p.url_repo }}" rel="noopener noreferrer">Ver repositorio</a>{% endif %}
+<p>{% for e in p.etiquetas %}#{{ e }} {% endfor %}</p>
+{% endblock %}

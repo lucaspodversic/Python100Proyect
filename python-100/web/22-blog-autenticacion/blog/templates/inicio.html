@@ -1,0 +1,9 @@
+{# Listado de artículos, del más nuevo al más viejo #}
+{% extends "base.html" %}
+{% block contenido %}
+<h1>Artículos</h1>
+{% for a in articulos %}
+  <article><h2><a href="{{ url_for('ver', aid=a['id']) }}">{{ a['titulo'] }}</a></h2>
+  <small>por {{ a['autor'] }}</small></article>
+{% else %}<p>Todavía no hay artículos.</p>{% endfor %}
+{% endblock %}

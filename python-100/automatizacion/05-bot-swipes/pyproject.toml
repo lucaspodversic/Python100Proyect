@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bot-swipes"
+version = "1.0.0"
+description = "Bot de 'swipes' con Page Object y reglas, contra una app de citas MOCK local."
+requires-python = ">=3.10"
+dependencies = ["beautifulsoup4>=4.12"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+selenium = ["selenium>=4.20"]
+
+[project.scripts]
+bot-swipes = "bot_swipes.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

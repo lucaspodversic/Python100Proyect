@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cnn-plantas"
+version = "1.0.0"
+description = "Clasificador de enfermedades en hojas con una CNN en PyTorch (CPU), listo para PlantVillage."
+requires-python = ">=3.10"
+# torch CPU: pip install torch --index-url https://download.pytorch.org/whl/cpu
+dependencies = ["numpy>=1.24", "torch>=2.1", "pillow>=10"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+cnn-plantas = "plantas.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

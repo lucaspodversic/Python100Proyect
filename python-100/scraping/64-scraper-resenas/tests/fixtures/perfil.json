@@ -1,0 +1,3 @@
+{"tarjeta": "div.resena", "texto": ".cuerpo", "autor": ".autor", "estrellas": ".estrellas",
+ "atributo_estrellas": "data-rating", "titulo": ".titulo", "fecha": ".fecha", "verificada": ".verif",
+ "siguiente": "a.mas"}

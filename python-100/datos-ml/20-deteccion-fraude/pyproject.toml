@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "deteccion-fraude"
+version = "1.0.0"
+description = "Detección de fraude en transacciones con clases desbalanceadas y umbral optimizado por costo."
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "pandas>=2.0", "scikit-learn>=1.3", "joblib>=1.3"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+deteccion-fraude = "fraude.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

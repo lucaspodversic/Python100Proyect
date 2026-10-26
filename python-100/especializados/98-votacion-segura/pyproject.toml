@@ -1,0 +1,29 @@
+# Configuración del proyecto (PEP 621). Instalación: pip install -e ".[dev]"
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "votacion-segura"
+version = "1.0.0"
+description = "Backend de votación electrónica con firmas ciegas RSA, urna encadenada por hash, tokens de un solo uso y auditoría"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = ["fastapi>=0.110", "pydantic>=2", "cryptography>=42"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "httpx>=0.27"]
+server = ["uvicorn>=0.29"]
+
+[tool.setuptools]
+packages = ["votacion"]
+
+[tool.pytest.ini_options]
+# pythonpath permite importar el paquete sin instalarlo.
+testpaths = ["tests"]
+pythonpath = ["."]
+# Sin caché de pytest para no ensuciar el repositorio.
+addopts = "-q -p no:cacheprovider"
+# Aviso de deprecación interno de Starlette sobre httpx (no afecta al código).
+filterwarnings = ["ignore:Using `httpx`"]

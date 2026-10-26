@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "backup-sync"
+version = "1.0.0"
+description = "Sincronizador incremental de backups a la nube (S3, Google Drive o carpeta) con manifiesto y versiones."
+requires-python = ">=3.10"
+dependencies = []  # núcleo sin dependencias; los SDK de nube son opcionales
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+s3 = ["boto3>=1.28"]
+drive = ["google-api-python-client>=2.100", "google-auth>=2.20"]
+
+[project.scripts]
+backup-sync = "backup_sync.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

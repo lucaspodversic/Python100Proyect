@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dashboard-finanzas"
+version = "1.0.0"
+description = "Dashboard web (Dash + Plotly) de ingresos y gastos personales a partir de un CSV."
+requires-python = ">=3.10"
+dependencies = ["pandas>=2.0", "plotly>=5.18", "dash>=2.14"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+dashboard-finanzas = "finanzas.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

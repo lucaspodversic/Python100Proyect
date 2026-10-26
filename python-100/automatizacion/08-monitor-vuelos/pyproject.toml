@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "monitor-vuelos"
+version = "1.0.0"
+description = "Rastrea el precio de un vuelo y alerta cuando baja de un umbral."
+requires-python = ">=3.10"
+dependencies = []  # stdlib: urllib, sqlite3, json
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+monitor-vuelos = "monitor_vuelos.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

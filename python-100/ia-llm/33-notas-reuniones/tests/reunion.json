@@ -1,0 +1,6 @@
+[
+  {"inicio": 0, "fin": 20, "hablante": "Ana", "texto": "Bueno, arrancamos con la planificación del lanzamiento."},
+  {"inicio": 20, "fin": 50, "hablante": "Beto", "texto": "El backend está casi listo. Voy a terminar los tests el viernes."},
+  {"inicio": 50, "fin": 70, "hablante": "Ana", "texto": "Perfecto. Decidimos lanzar el 15/11. Caro, podés preparar el anuncio para la semana que viene."},
+  {"inicio": 70, "fin": 90, "hablante": "Caro", "texto": "Dale. Hay que revisar el presupuesto de marketing también."}
+]

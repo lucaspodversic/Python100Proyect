@@ -1,0 +1,10 @@
+{# Grilla de proyectos con filtro por etiqueta #}
+{% extends "base.html" %}{% block contenido %}
+<h1>Mis proyectos</h1>
+<p>{% for e in etiquetas %}<a href="?etiqueta={{ e }}" {% if e == activa %}class="activa"{% endif %}>#{{ e }}</a> {% endfor %}</p>
+{% for p in proyectos %}
+<article>{% if p.destacado %}<strong>★</strong>{% endif %}
+  <h2><a href="{{ url_for('detalle', slug=p.slug) }}">{{ p.titulo }}</a></h2><p>{{ p.resumen }}</p>
+</article>
+{% else %}<p>No hay proyectos todavía.</p>{% endfor %}
+{% endblock %}

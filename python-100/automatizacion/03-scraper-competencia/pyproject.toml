@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scraper-competencia"
+version = "1.0.0"
+description = "Scraper ético de precios de competencia que exporta a CSV/Excel."
+requires-python = ">=3.10"
+dependencies = ["beautifulsoup4>=4.12", "openpyxl>=3.1"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+scraper-competencia = "scraper_competencia.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

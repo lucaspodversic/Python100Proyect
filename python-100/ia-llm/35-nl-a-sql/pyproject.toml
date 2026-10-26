@@ -1,0 +1,17 @@
+# Proyecto 35-nl-a-sql: Consultas en lenguaje natural a SQL, validadas y en solo lectura
+[project]
+name = "nl-a-sql"
+version = "1.0.0"
+description = "Consultas en lenguaje natural a SQL, validadas y en solo lectura"
+requires-python = ">=3.10"
+# httpx se usa para hablar con las APIs de LLM (OpenAI / Anthropic)
+dependencies = ["httpx>=0.27"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-p no:cacheprovider -q"
+filterwarnings = ["ignore:Using `httpx`"]

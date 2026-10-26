@@ -1,0 +1,12 @@
+{# Vista de un artículo; los botones de edición solo los ve el autor #}
+{% extends "base.html" %}
+{% block contenido %}
+<h1>{{ art['titulo'] }}</h1><small>por {{ art['autor'] }} · {{ art['creado'] }}</small>
+<div>{{ art['cuerpo'] }}</div>
+{% if g.usuario and g.usuario['id'] == art['autor_id'] %}
+  <a href="{{ url_for('editar', aid=art['id']) }}">Editar</a>
+  <form method="post" action="{{ url_for('borrar', aid=art['id']) }}">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button>Borrar</button>
+  </form>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,16 @@
+# Proyecto 27: Sistema de reservas de citas (peluquería, consultorio...).
+[project]
+name = "reservas-citas"
+version = "1.0.0"
+description = "Reservas de turnos con FastAPI: horarios, disponibilidad y sin solapamientos"
+requires-python = ">=3.10"
+dependencies = ["fastapi>=0.110", "uvicorn>=0.27"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "httpx>=0.27"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-p no:cacheprovider -q"
+filterwarnings = ["ignore:Using `httpx`"]

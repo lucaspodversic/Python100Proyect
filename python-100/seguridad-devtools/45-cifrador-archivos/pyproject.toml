@@ -1,0 +1,27 @@
+# Configuración del proyecto (PEP 621). Instalar con: pip install -e ".[dev]"
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cifrador"
+version = "1.0.0"
+description = "Cifrador/descifrador de archivos con AES-256-GCM por bloques"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+# Dependencias de ejecución (se mantienen al mínimo para que sea liviano)
+dependencies = ["cryptography>=42"]
+
+[project.optional-dependencies]
+# Dependencias sólo para desarrollo / tests
+dev = ["pytest>=7"]
+
+[tool.setuptools]
+packages = ["cifrador"]
+
+[tool.pytest.ini_options]
+# Permite importar el paquete sin instalarlo y evita crear .pytest_cache
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-q -p no:cacheprovider"

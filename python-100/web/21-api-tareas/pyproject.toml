@@ -1,0 +1,20 @@
+# Configuración del proyecto 21: API REST de tareas (To-Do) con FastAPI.
+[project]
+name = "api-tareas"
+version = "1.0.0"
+description = "API REST CRUD de tareas con FastAPI y SQLite"
+requires-python = ">=3.10"
+dependencies = ["fastapi>=0.110", "uvicorn>=0.27"]
+
+[project.optional-dependencies]
+# Dependencias solo para desarrollo / tests
+dev = ["pytest>=8", "httpx>=0.27"]
+
+[tool.pytest.ini_options]
+# Permite importar el paquete `app` desde la raíz sin instalarlo
+pythonpath = ["."]
+testpaths = ["tests"]
+# Evita crear .pytest_cache dentro del proyecto
+addopts = "-p no:cacheprovider -q"
+# Aviso de Starlette sobre httpx en TestClient: inofensivo para estos tests
+filterwarnings = ["ignore:Using `httpx`"]

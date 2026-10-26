@@ -1,0 +1,7 @@
+[
+  {"pregunta": "¿Cuáles son los horarios de atención?", "respuesta": "Atendemos de lunes a viernes de 9 a 18 h.", "categoria": "horarios"},
+  {"pregunta": "¿Cuánto tarda el envío de un pedido?", "respuesta": "Los envíos demoran entre 3 y 5 días hábiles.", "categoria": "envios"},
+  {"pregunta": "¿Cómo hago una devolución o cambio?", "respuesta": "Tenés 30 días para devolver el producto desde Mi cuenta > Pedidos.", "categoria": "devoluciones"},
+  {"pregunta": "¿Qué medios de pago aceptan?", "respuesta": "Aceptamos tarjeta de crédito, débito y transferencia.", "categoria": "pagos"},
+  {"pregunta": "¿Cómo cambio mi contraseña?", "respuesta": "Desde Mi cuenta > Seguridad > Cambiar contraseña.", "categoria": "cuenta"}
+]

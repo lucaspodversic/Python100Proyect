@@ -1,0 +1,20 @@
+<!doctype html>
+<!-- Plantilla base: navegación y mensajes flash. Jinja2 escapa todo por defecto. -->
+<html lang="es"><head><meta charset="utf-8"><title>Blog</title></head>
+<body>
+<nav>
+  <a href="{{ url_for('inicio') }}">Inicio</a>
+  {% if g.usuario %}
+    <span>Hola, {{ g.usuario['nombre'] }}</span>
+    <a href="{{ url_for('nuevo') }}">Nuevo artículo</a>
+    <form method="post" action="{{ url_for('logout') }}" style="display:inline">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <button>Salir</button>
+    </form>
+  {% else %}
+    <a href="{{ url_for('login') }}">Entrar</a> <a href="{{ url_for('registro') }}">Registrarse</a>
+  {% endif %}
+</nav>
+{% for m in get_flashed_messages() %}<p class="flash">{{ m }}</p>{% endfor %}
+{% block contenido %}{% endblock %}
+</body></html>

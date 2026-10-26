@@ -1,0 +1,16 @@
+# Entornos virtuales y cachés de Python (no se versionan)
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+# Bases de datos locales generadas al ejecutar
+*.db
+*.sqlite3
+# Variables de entorno con claves (NUNCA se suben)
+.env

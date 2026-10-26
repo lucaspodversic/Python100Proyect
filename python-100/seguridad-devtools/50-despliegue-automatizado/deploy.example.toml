@@ -1,0 +1,12 @@
+# Copiá este archivo a deploy.toml y ajustalo. NO subas claves privadas al repo.
+[deploy]
+host = "mi-vps.ejemplo.com"
+usuario = "deploy"
+repo = "git@github.com:usuario/miapp.git"
+ruta_base = "/srv/miapp"
+rama = "main"
+clave_ssh = "~/.ssh/id_ed25519"
+comandos_build = ["python3 -m venv .venv", ".venv/bin/pip install -r requirements.txt"]
+comando_reinicio = "sudo systemctl restart miapp"
+comando_salud = "curl -fsS http://127.0.0.1:8000/health"
+releases_a_conservar = 5

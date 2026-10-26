@@ -1,0 +1,16 @@
+# Proyecto 23: Clon básico de e-commerce (productos, carrito, pago simulado).
+[project]
+name = "tienda-online"
+version = "1.0.0"
+description = "E-commerce básico con FastAPI: catálogo, carrito y pasarela de pago simulada"
+requires-python = ">=3.10"
+dependencies = ["fastapi>=0.110", "uvicorn>=0.27"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "httpx>=0.27"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-p no:cacheprovider -q"
+filterwarnings = ["ignore:Using `httpx`"]

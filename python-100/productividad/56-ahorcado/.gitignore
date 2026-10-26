@@ -1,0 +1,16 @@
+# Archivos generados por Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+# Entornos virtuales
+.venv/
+venv/
+# Caché de pytest y cobertura
+.pytest_cache/
+.coverage
+htmlcov/
+# Salidas generadas por las herramientas
+salida/
+*.log

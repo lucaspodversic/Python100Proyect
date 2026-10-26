@@ -1,0 +1,11 @@
+{# Formulario de creación / edición de artículos #}
+{% extends "base.html" %}
+{% block contenido %}
+<h1>{{ 'Editar' if art else 'Nuevo' }} artículo</h1>
+<form method="post">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <input name="titulo" value="{{ art['titulo'] if art else '' }}" required>
+  <textarea name="cuerpo" required>{{ art['cuerpo'] if art else '' }}</textarea>
+  <button>Guardar</button>
+</form>
+{% endblock %}

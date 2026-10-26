@@ -1,0 +1,16 @@
+{# Panel de administración: alta de proyectos, listado y mensajes #}
+{% extends "base.html" %}{% block contenido %}
+<h1>Panel</h1>
+<form method="post" action="{{ url_for('crear_proyecto') }}">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <input name="titulo" placeholder="Título"><input name="resumen" placeholder="Resumen">
+  <textarea name="descripcion"></textarea><input name="url_repo" placeholder="https://...">
+  <input name="etiquetas" placeholder="python, flask"><label><input type="checkbox" name="destacado"> Destacado</label>
+  <button>Crear</button>
+</form>
+<ul>{% for p in proyectos %}<li>{{ p.titulo }}
+  <form method="post" action="{{ url_for('borrar_proyecto', pid=p.id) }}" style="display:inline">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button>Borrar</button></form></li>{% endfor %}</ul>
+<h2>Mensajes</h2>
+{% for m in mensajes %}<blockquote>{{ m['nombre'] }} ({{ m['email'] }}): {{ m['texto'] }}</blockquote>{% endfor %}
+{% endblock %}
